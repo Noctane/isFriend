@@ -20,10 +20,8 @@ function isFriend(string) {
 
     let newFriend = friend;
     // on boucle sur le tableau a la recherche d'un match avec l'ami a rechercher
-    friends.map(arr => {
-      let found = arr.findIndex(f => f === newFriend)
-      // s'il est trouvé
-      if (found !== -1) {
+    friends.forEach(arr => {
+     if (arr.findIndex(f => f === newFriend) !== -1) {
         // on attribue l'ami se trouvant dans ce tableau à la variable `newFriend`
         newFriend = arr.find(f => f !== newFriend);
       }
@@ -43,6 +41,7 @@ function isFriend(string) {
       return search(newFriend, count - 1)
     }
   }
+
   return search(toSrch, friends.length);
 }
 
@@ -52,4 +51,4 @@ Mathieu est ami avec Aurore
 Sophie est amie avec moi
 Je suis ami avec Benjamin
 ---
-Est-ce que Frank est mon amie ?`);
+Est-ce que Sophie est mon amie ?`);
